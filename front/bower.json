@@ -1,0 +1,14 @@
+{
+  "name": "Aswat-Test",
+  "version": "0.0.0",
+  "authors": [
+    "Anas Mammeri <anas.mammeri@gmail.com>"
+  ],
+  "description": "The Aswat Job Test, a simple single app page relating to a shopping card",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.4.0",
+    "bootstrap": "~3.3.4",
+    "angular-ui-router": "~0.2.15"
+  }
+}

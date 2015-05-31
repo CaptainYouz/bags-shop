@@ -1,0 +1,17 @@
+{
+  "name": "Aswat-Test",
+  "version": "1.0.0",
+  "description": "The Aswat Job Test, a simple single app page relating to a shopping card",
+  "author": "Anas Mammeri",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "gulp-angular-templatecache": "^1.6.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-htmlmin": "^1.1.1",
+    "gulp-livereload": "^3.8.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sass": "^2.0.1",
+    "streamqueue": "^0.1.3"
+  }
+}
