@@ -1,0 +1,13 @@
+$font-color: #3f3f3f;
+body {
+	font-family: 'Lato';
+	color: $font-color;
+
+	a {
+		color: $font-color;
+	}
+	a:hover, a:active {
+		text-decoration: none;
+		color: black;
+	}
+}

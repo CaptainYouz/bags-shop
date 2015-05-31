@@ -8,15 +8,24 @@ app.config(function ($urlRouterProvider, $stateProvider) {
 		url: '/',
 		abstract: true,
 		views : {
-			'header' : {
+			'header': {
 				templateUrl: 'header/header.html',
 				controller: 'HeaderController'
+			},
+			'menu@awsatApp': {
+				templateUrl: 'header/menu/menu.html',
+				controller: 'MenuController'
 			},
 			'footer' : {
 				templateUrl: 'footer/footer.html'
 			}
+		},
+		resolve: {
+			categories: function (Menu) {
+				return Menu.init();
+			}
 		}
 	});
 
-	$urlRouterProvider.otherwise('/catalog');
+	$urlRouterProvider.otherwise('/catalog/0');
 });
