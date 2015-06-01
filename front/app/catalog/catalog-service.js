@@ -1,22 +1,46 @@
-app.factory('Catalog', function ($http) {
+catalog.factory('Catalog', function ($http) {
 	_categories = [];
+	_products   = [];
 
 	return {
 		init: function () {
-			_categories = [
-				{ "id": 1, "name": "backpacks", "imgUrl" : "http://i2.cdscdn.com/pdt2/3/9/4/1/700x700/qua2009994898394/rw/sac-a-dos-toile-look-vintage-desert-canvas-ba.jpg" },
-				{ "id": 2, "name": "travel bag", "imgUrl": "http://www.gandy.fr/media/catalog/product/cache/2/image/5e06319eda06f020e43594a9c230972d/s/a/sac-de-voyage-eastpak-trunk-dos_1_1.jpg" },
-				{ "id": 3, "name": "shoulder bags", "imgUrl": "http://www.ecanvasbags.com/2579/canvas-shoulder-bags-for-women-13-inch-laptop-bag-coffee-black-.jpg"},
-				{ "id": 2, "name": "travel bag", "imgUrl": "http://www.gandy.fr/media/catalog/product/cache/2/image/5e06319eda06f020e43594a9c230972d/s/a/sac-de-voyage-eastpak-trunk-dos_1_1.jpg" },
-			];
-
-			// @todo: fetch categories from server
-			return _categories;
-		},
-		getProducts: function () {
+			return $http.get('@@api/categories').then(function (res) {
+				_categories = res.data;
+				return _categories;
+			});
 		},
 		getCategories: function () {
 			return _categories;
+		},
+		getProducts: function (categoryId) {
+			var products = _.find(_products, function (product) {
+				return product.id == categoryId;
+			});
+
+			if (products) {
+				return products.elements;
+			} else {
+				return $http.get('@@api/products/' + categoryId).then(function (res) {
+					_products.push({ id: categoryId, elements : res.data });
+					return res.data;
+				});
+			}
+		},
+		getProduct: function (categoryId, productId) {
+			if (_products.length > 0) {
+				var products = _.find(_products, function (product) {
+					return product.id == categoryId;
+				});
+				var product = _.find(products.elements, function (product) {
+					return product.id == productId;
+				});
+
+				if (product) return product;
+			} else {
+				return $http.get('@@api/product/' + productId).then(function (res) {
+					return res.data;
+				});
+			}
 		}
 	};
 });

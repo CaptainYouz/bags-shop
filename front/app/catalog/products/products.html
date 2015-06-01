@@ -1,5 +1,12 @@
 <div class="container products">
 	<div class="row content-title">
-		<span>List of {{ category.name }}</span>
+		<span>{{ category.name }}</span>
+	</div>
+	<div class="row products-list">
+		<div class="col-sm-4 product" ng-repeat="product in products track by $index" ui-sref="product({ productId : product.id })">
+			<img src="{{ product.imgUrl }}">
+			<div class="name">{{ product.name }}</div>
+			<div class="plus"></div>
+		</div>
 	</div>
 </div>

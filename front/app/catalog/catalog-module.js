@@ -13,12 +13,32 @@ catalog.config(function ($stateProvider) {
 		}
 	})
 	.state('products', {
-		url: '/products/:categoryId',
+		url: '/category/:categoryId',
 		parent: 'catalog',
 		views: {
 			'content@': {
 				templateUrl: 'catalog/products/products.html',
 				controller: 'ProductsController'
+			}
+		},
+		resolve: {
+			products : function ($stateParams, Catalog) {
+				return Catalog.getProducts($stateParams.categoryId);
+			}
+		}
+	})
+	.state('product', {
+		url: '/product/:productId',
+		parent: 'products',
+		views: {
+			'content@': {
+				templateUrl: 'catalog/products/product/product.html',
+				controller: 'ProductController'
+			}
+		},
+		resolve: {
+			product: function ($stateParams, Catalog) {
+				return Catalog.getProduct($stateParams.categoryId, $stateParams.productId);
 			}
 		}
 	});
