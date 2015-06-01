@@ -1,4 +1,4 @@
-<div class="col-xs-9 links">
+<div class="links">
 	<ul class="sections">
 		<li><a href="http://www.google.com">About us</a></li>
 		<li><a href="http://www.google.com">Contact us</a></li>
@@ -6,8 +6,6 @@
 	</ul>
 	<ul class="categories">
 		<li ng-repeat="category in categories track by $index" ui-sref="products({ categoryId : category.id })">{{ category.name }}</li>
+		<li><i class="glyphicon glyphicon-shopping-cart"></i></li>
 	</ul>
-</div>
-<div class="col-xs-3 cart">
-	<i class="glyphicon glyphicon-shopping-cart"></i>
 </div>
