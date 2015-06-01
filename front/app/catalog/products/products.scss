@@ -36,6 +36,18 @@
 			right: 0;
 			font-size: 35px;
 		}
+		.add-to-cart {
+			text-align: right;
+			font-style: italic;
+			font-size: 20px;
+			i {
+				margin-left: 10px;
+			}
+		}
+		.add-to-cart:hover {
+			color: black;
+			cursor: pointer;
+		}
 		.description {
 			margin: 20px 20px 0 0;
 			line-height: 25px;
