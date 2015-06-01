@@ -8,6 +8,13 @@ conf.file('conf/aswat_conf.json');
 
 var	server = restify.createServer({ name: conf.get('server:name') });
 
+server.use(function (req, res, next) {
+	res.setHeader('Access-Control-Allow-Origin', '*');
+	res.setHeader('Access-Control-Allow-Methods', 'GET');
+	res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+	return next();
+});
+
 var getCategories = function (req, res, next) {
 	res.send(categories);
 	res.send(200);
