@@ -1,5 +1,6 @@
 var app = angular.module('awsatApp', [
 	'ui.router',
+	'angular-loading-bar',
 	'awsatApp.catalog'
 ]);
 
@@ -29,3 +30,7 @@ app.config(function ($urlRouterProvider, $stateProvider) {
 
 	$urlRouterProvider.otherwise('/catalog');
 });
+
+angular.module('myApp', ['angular-loading-bar']).config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
+	cfpLoadingBarProvider.latencyThreshold = 050;
+}])

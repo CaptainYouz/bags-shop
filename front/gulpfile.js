@@ -17,14 +17,15 @@ var paths = {
 			'bower_components/lodash/lodash.js',
 			'bower_components/angular/angular.js',
 			'bower_components/angular-ui-router/release/angular-ui-router.js',
+			'bower_components/angular-loading-bar/build/loading-bar.min.js'
 		],
 		src: [
-			app 		+ '/app.js',
-			app 		+ '/**/*-module.js',
-			app 		+ '/**/*-service.js',
-			app 		+ '/**/*-directive.js',
-			app 		+ '/**/*-filter.js',
-			app 		+ '/**/*-controller.js',
+			app + '/app.js',
+			app + '/**/*-module.js',
+			app + '/**/*-service.js',
+			app + '/**/*-directive.js',
+			app + '/**/*-filter.js',
+			app + '/**/*-controller.js',
 		]
 	},
 	partials: [
@@ -32,7 +33,7 @@ var paths = {
 	],
 	css: [
 		'bower_components/bootstrap/dist/css/bootstrap.css',
-		'bower_components/angular-loading-bar/build/loading-bar.css',
+		'bower_components/angular-loading-bar/build/loading-bar.min.css',
 	],
 	sass: [
 		app + '/**/*.scss'
