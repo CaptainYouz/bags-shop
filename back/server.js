@@ -47,9 +47,24 @@ var getProducts = function (req, res, next) {
 	return next();
 };
 
+var getProduct = function (req, res, next) {
+	var response = _.find(products, function (product) {
+		return product.id == req.params.productId;
+	});
+
+	if (response) {
+		res.send(response);
+		res.send(200);
+	} else {
+		res.send(404);
+	}
+	return next();
+};
+
 server.get('/categories', getCategories);
 server.get('/category/:id', getCategory);
 server.get('/products/:categoryId', getProducts);
+server.get('/product/:productId', getProduct);
 
 server.listen(conf.get('server:port'), function() {
 	console.log('%s listening at %s', server.name, server.url);
