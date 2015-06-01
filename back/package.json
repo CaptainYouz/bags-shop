@@ -1,0 +1,18 @@
+{
+  "name": "Awsat-Server",
+  "version": "1.0.0",
+  "description": "Awsat server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Anas Mammeri",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^3.9.3",
+    "mongojs": "^0.18.2",
+    "nconf": "^0.7.1",
+    "restify": "^3.0.3"
+  }
+}

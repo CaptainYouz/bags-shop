@@ -1,0 +1,6 @@
+{
+	"server": {
+		"name": "Awsat Test Api",
+		"port": 12080
+	}
+}

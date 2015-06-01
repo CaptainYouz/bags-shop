@@ -1,0 +1,90 @@
+[
+	{
+		"id": 1,
+		"categoryId": 1,
+		"name": "Borealis",
+		"brand": "NorthFace",
+		"shortDesc": "A large and solid travel bag",
+		"description": "Ready for the long haul, this 36'' rolling suitcase now sports a lighter, more user-friendly design and is generously sized to safely get all your gear to your final destination.",
+		"imgUrl": "http://image.rakuten.co.jp/zodiac/cabinet/northface/nm81465k_7.jpg",
+		"price": 319.00,
+		"currency": "euro"
+	},
+	{
+		"id": 2,
+		"categoryId": 1,
+		"name": "Surge",
+		"brand": "NorthFace",
+		"shortDesc": "Redisigned to organized your electronics",
+		"description": "Completely redesigned to organize your electronics and simplify your life on-the-go, the 33-liter Surge backpack is constructed of hyper-durable ballistics nylon and crafted with a padded haul handle on the exterior. Features a front organizational compartment, a larger main compartment, and a 17'' laptop compartment that zips completely open and lays flat to meet TSA requirements. Fleece-lined pockets include a tablet sleeve, media pocket and a sunglass pocket",
+		"imgUrl": "http://images.thenorthface.com/is/image/TheNorthFace/236x236/women-39-s-surge-backpack-APNK_JK3_hero.jpg",
+		"price": 129.00,
+		"currency": "euro"
+	},
+	{
+		"id": 3,
+		"categoryId": 1,
+		"name": "Padded Pak’r",
+		"brand": "Eastpack",
+		"shortDesc": "The Padded Pak’r® is our icon",
+		"description": "Main compartment with zippered front pocket to stash small stuff, Comfortable padded back, Padded shoulder straps with SGS",
+		"imgUrl": "http://eastpak.scene7.com/is/image/Eastpak/EK620_63J?id=U08bT2&fmt=jpg&fit=constrain,1&wid=500&hei=500",
+		"price": 49.00,
+		"currency": "euro"
+	},
+	{
+		"id": 4,
+		"categoryId": 2,
+		"name": "Rolling Thunder",
+		"brand": "NorthFace",
+		"shortDesc": "The most famous northface backpack",
+		"description": "Free of embellishment, this sleek daypack boasts two large zip pockets so you can stash gear quickly and hit the road. The main compartment features a padded laptop sleeve (fits most 15'' laptops), and an almost equally large secondary zip pocket with built-in organizational sleeves. Bungee cord on face of pack lets you store additional gear, or cinch down contents inside. Updated shoulder straps and back panel.",
+		"imgUrl": "http://www.triads.co.uk/images/products/zoom/1378739538-24625100.jpg",
+		"price": 89.00,
+		"currency": "euro"
+	},
+	{
+		"id": 5,
+		"categoryId": 2,
+		"name": "Byles L Ash Blend2",
+		"brand": "Eastpak",
+		"shortDesc": "Main compartment with U-zip opening",
+		"description": "Compression straps, Zippered front pocket, Side handle",
+		"imgUrl": "http://eastpak.scene7.com/is/image/Eastpak/EK24A_08I?id=6-tbT0&fmt=jpg&fit=constrain,1&wid=500&hei=500",
+		"price": 169.00,
+		"currency": "euro"
+	},
+	{
+		"id": 6,
+		"categoryId": 3,
+		"name": "Dokit Black Leather",
+		"brand": "Eastpak",
+		"shortDesc": "Quilted laptop sleeve 31.5 x 48",
+		"description": "Quilted laptop sleeve 31.5 x 48, Main compartment wit zippered closure, Adjustable and detachable padded shoulder strap with SGS",
+		"imgUrl": "http://eastpak.scene7.com/is/image/Eastpak/EK024_762?id=Rh6bJ1&fmt=jpg&fit=constrain,1&wid=500&hei=500",
+		"price": 129.00,
+		"currency": "euro"
+	},
+	{
+		"id": 7,
+		"categoryId": 3,
+		"name": "D89 BRIEF BAG",
+		"brand": "Carhartt",
+		"shortDesc": "UNISEX, WATER REPELLENT BRIEF BAG",
+		"description": "UNISEX, WATER REPELLENT BRIEF BAG",
+		"imgUrl": "http://eastpak.scene7.com/is/image/Eastpak/EK024_762?id=Rh6bJ1&fmt=jpg&fit=constrain,1&wid=500&hei=500",
+		"price": 129.00,
+		"currency": "euro"
+	},
+	{
+		"id": 8,
+		"categoryId": 3,
+		"name": "Safari-sur-Seine",
+		"brand": "Longchamp",
+		"shortDesc": "Document holder",
+		"description": "The old-school satchel redefined for the Safari Sur Seine line.A series of bags for men living and working in the urban jungle. The raw and authentic detailing gives the line its “lodge” style, evoking comfort and luxury.",
+		"imgUrl": "http://eastpak.scene7.com/is/image/Eastpak/EK024_762?id=Rh6bJ1&fmt=jpg&fit=constrain,1&wid=500&hei=500",
+		"price": 129.00,
+		"currency": "euro"
+	}
+]
