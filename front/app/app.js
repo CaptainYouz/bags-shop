@@ -21,11 +21,11 @@ app.config(function ($urlRouterProvider, $stateProvider) {
 			}
 		},
 		resolve: {
-			categories: function (Menu) {
-				return Menu.init();
+			categories: function (Catalog) {
+				return Catalog.init();
 			}
 		}
 	});
 
-	$urlRouterProvider.otherwise('/catalog/0');
+	$urlRouterProvider.otherwise('/catalog');
 });

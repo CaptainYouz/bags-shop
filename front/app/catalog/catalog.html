@@ -1,8 +1,12 @@
-<section class="container catalog">
-	<nav class="col-sm-4">
-		Hello
-	</nav>
-	<div class="col-sm-8">
-		Test
+<div class="container catalog">
+	<div class="row content-title">
+		<span>Choose your category of bags</span>
 	</div>
-</section>
+	<div class="row categories">
+		<div class="col-sm-4 category" ng-repeat="category in categories track by $index" ui-sref="products({ categoryId : category.id })">
+			<img src="{{ category.imgUrl }}">
+			<div class="name">{{ category.name }}</div>
+			<div class="plus"></div>
+		</div>
+	</div>
+</div>

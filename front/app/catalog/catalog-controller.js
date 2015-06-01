@@ -1,3 +1,3 @@
-catalog.controller('CatalogController', function ($scope, $stateParams) {
-	console.log($stateParams);
+catalog.controller('CatalogController', function ($scope, categories) {
+	$scope.categories = categories;
 });

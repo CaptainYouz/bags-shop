@@ -13,6 +13,7 @@ var dist        = 'dist';
 var paths = {
     js: {
         libs: [
+            'bower_components/lodash/lodash.js',
             'bower_components/angular/angular.js',
             'bower_components/angular-ui-router/release/angular-ui-router.js',
         ],

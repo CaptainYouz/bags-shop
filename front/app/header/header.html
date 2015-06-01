@@ -1,12 +1,11 @@
 <div class="container header">
 	<div class="row">
-		<div class="col-sm-2 logo">
-			<img src="http://www.psdgraphics.com/file/shopping-bag-icon.jpg" alt="Bags shop">
-			<span>The bags shop</span>
+		<div class="col-sm-3 logo">
+			<div ui-sref="catalog">
+				<img src="http://images.clipartpanda.com/backpack-clipart-black-and-white-plain-white-backpack-hi.png">
+				<span>The bags shop</span>
+			</div>
 		</div>
-		<div class="col-sm-6 menu" ui-view="menu"></div>
-		<div class="col-sm-4 cart">
-			<i class="glyphicon glyphicon-shopping-cart"></i>
-		</div>
+		<div class="col-sm-9 menu" ui-view="menu"></div>
 	</div>
 </div>
