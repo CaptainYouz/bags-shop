@@ -1,0 +1,40 @@
+footer {
+	margin-top: 100px;
+	padding: 20px 0 30px 0;
+	text-align: center;
+	.content-title {
+		margin-bottom: 20px;
+	}
+
+	.newsletter {
+		.input-group-addon {
+		}
+	}
+	.terms {
+		ul {
+			list-style: none;
+			padding: 0;
+			li {
+				margin-top: 10px;
+			}
+		}
+	}
+	.social {
+		i {
+			font-size: 30px;
+			padding: 0 10px 0 10px;
+		}
+		i:hover {
+			color: black;
+			cursor: pointer;
+		}
+	}
+
+	.author {
+		margin-top: 70px;
+		font-family: Arial;
+		font-size: 10px;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+}
