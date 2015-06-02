@@ -1,20 +1,14 @@
 <div class="container product">
 	<div class="row">
-		<div class="col-sm-5 image">
+		<div class="col-sm-6 image">
 			<img src="{{ product.imgUrl }}">
 		</div>
-		<div class="col-sm-offset-6 col-sm-4 product-description">
+		<div class="col-sm-4 product-description">
 			<div class="name">{{ product.name }}</div>
 			<div class="brand">{{ product.brand }}</div>
 			<div class="price">{{ product.price }}<span class="currency">{{ product.currency }}</span></div>
 			<div class="add-to-cart">add to cart<i class="glyphicon glyphicon-plus"></i></div>
 			<div class="description">{{ product.description }}</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-offset-6 col-sm-4 next">
-			<i class="fa fa-angle-left"></i>
-			<i class="fa fa-angle-right"></i>
 		</div>
 	</div>
 </div>
