@@ -1,12 +1,14 @@
 .products {
+	padding: 100px 0 100px 0;
 	.products-list {
 		.product {
-			padding: 30px;
 			text-align: center;
 			text-transform: uppercase;
+			padding: 30px;
 
 			.content {
 				display: inline-block;
+
 				img { width: 100%; }
 				.product-title {
 					text-align: left;
@@ -28,12 +30,23 @@
 			}
 			.content:hover {
 				cursor: pointer;
+				text-decoration: underline;
 			}
 		}
 	}
 }
 
 .product {
+	padding: 70px 0 100px 0;
+	.next {
+		padding: 0;
+		margin-bottom: 30px;
+		text-align: right;
+		i {
+			margin-left: 20px;
+			font-size: 30px;
+		}
+	}
 	.image {
 		text-align: right;
 		img {
