@@ -130,5 +130,49 @@
 		"imgUrl": "http://cdn.shopify.com/s/files/1/0236/6911/products/10007-00564-OS_01_1024x1024.jpeg?v=1433166159",
 		"price": 99.00,
 		"currency": "€"
+	},
+	{
+		"id": 13,
+		"categoryId": 2,
+		"name": "Travel Trolley",
+		"brand": "Carhartt",
+		"shortDesc": "Carhartt WIP x UDG Travel Trolley M",
+		"description": "100% Polyester Canvas, 56 x 35 x 26 cm, durable travel trolley - not only for Djs, exclusively made by UDG, main zip closure with lock, stretch zones around zippered main compartments, two front compartments, rectractable handle with 2-stage internal trolley system smooth, replaceable wheels",
+		"imgUrl": "http://shop.carhartt-wip.com/medias/sys_master/8889916227614.jpg",
+		"price": 299.00,
+		"currency": "€"
+	},
+	{
+		"id": 14,
+		"categoryId": 2,
+		"name": "Wheeled Gear Bag",
+		"brand": "Carhartt",
+		"shortDesc": "Carhartt Legacy 30'' Wheeled Gear Bag",
+		"description": "Carhartt Legacy 20'' gear bag. The Legacy Series uses heavy-duty 1200D poly treated with our Rain Defender durable water repellant formula and reinforced with Duravax to further protect the bags from tears and abrasions. Triple-stitch reinforcements, and YKK zippers and robust organization have prepared these bags to endure the rigors and demands of hard work.",
+		"imgUrl": "http://cdn1.ebags.com/is/image/im2/280372_1_1?resmode=4&op_usm=1,1,1,&qlt=80,1&hei=500&wid=500&align=0,1",
+		"price": 239.00,
+		"currency": "€"
+	},
+	{
+		"id": 15,
+		"categoryId": 2,
+		"name": "Campaign Luggage",
+		"brand": "Herschel",
+		"shortDesc": "Duck Camo/Paradise",
+		"description": "The perfect carry on suitcase, featuring a mesh partitioned main compartment for effective organization. Campaign Luggage meets carry on sizing for most major airlines. A pleated front exterior pocket, wheels, and an extendable handle makes the Campaign perfect for all your travels.",
+		"imgUrl": "http://cdn.shopify.com/s/files/1/0236/6911/products/10041-00333-OS_01_1024x1024.jpeg?v=1433228106",
+		"price": 159.00,
+		"currency": "€"
+	},
+	{
+		"id": 16,
+		"categoryId": 3,
+		"name": "Clark Messenger",
+		"brand": "Herschel",
+		"shortDesc": "Navy",
+		"description": "The Clark Messenger is a large volume messenger designed to be the perfect carryall. I comes with a removable strap and is perfect for work, travel or school.",
+		"imgUrl": "http://cdn.shopify.com/s/files/1/0236/6911/products/10119-00007-OS_02_48bc4bd9-467d-4baa-b020-d54c111f9b71_1024x1024.jpeg?v=1433183701",
+		"price": 89.00,
+		"currency": "€"
 	}
 ]
