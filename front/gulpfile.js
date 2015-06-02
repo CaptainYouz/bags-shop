@@ -33,7 +33,7 @@ var paths = {
 	],
 	css: [
 		'bower_components/bootstrap/dist/css/bootstrap.css',
-		'bower_components/angular-loading-bar/build/loading-bar.min.css',
+		'bower_components/angular-loading-bar/build/loading-bar.min.css'
 	],
 	sass: [
 		app + '/**/*.scss'

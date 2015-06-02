@@ -14,9 +14,8 @@
 	</div>
 	<div class="row categories">
 		<div class="col-sm-4 category" ng-repeat="category in categories track by $index" ui-sref="products({ categoryId : category.id })">
-			<img src="{{ category.imgUrl }}">
+			<img src="{{ category.imgUrl }}" class="hvr-float-shadow">
 			<div class="name">{{ category.name }}</div>
-			<div class="plus"></div>
 		</div>
 	</div>
 </div>
