@@ -5,7 +5,19 @@
 			text-align: center;
 			text-transform: uppercase;
 
-			img { width: 200px; }
+			.content {
+				display: inline-block;
+				padding: 10px;
+				img { width: 200px; }
+				.name {
+					margin-top: 20px;
+					font-size: 17px;
+				}
+			}
+
+			.content:hover {
+				cursor: pointer;
+			}
 		}
 	}
 }
