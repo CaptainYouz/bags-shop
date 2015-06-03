@@ -1,3 +1,6 @@
 cart.controller('CartController', function ($scope, Cart) {
-	$scope.items = Cart.getItems();
+	$scope.getItems = Cart.getItems;
+
+	$scope.increase = function (item) { Cart.addProduct(item); };
+	$scope.decrease = function (item) { Cart.increaseQuantity(item.id); };
 });

@@ -46,6 +46,15 @@ cart.factory('CartService', function ($http) {
 
 			Cart.nbItems++;
 			window.localStorage.setItem('aswatCart', JSON.stringify(Cart.items));
+		},
+		increaseQuantity: function (itemId) {
+			var item = _.find(Cart.items, function (it) { return it.id == itemId; });
+
+			if (item.quantity > 1) {
+				item.quantity--;
+				item.totalPrice -= item.product.price;
+			}
+			window.localStorage.setItem('aswatCart', JSON.stringify(Cart.items));
 		}
 	};
 

@@ -9,7 +9,7 @@
 				<div class="col-sm-2">Quantity</div>
 				<div class="col-sm-2">Price</div>
 			</div>
-			<div class="row item" ng-repeat="item in items track by $index">
+			<div class="row item" ng-repeat="item in getItems() track by $index">
 				<div class="col-sm-1 text-center delete"><i class="fa fa-close"></i></div>
 				<div class="col-sm-2 image"><img src="{{ item.product.imgUrl }}" alt="{{ item.product.name }}"></div>
 				<div class="col-sm-5 info">
@@ -18,17 +18,19 @@
 				</div>
 				<div class="col-sm-2 quantity">
 					<div class="selectors">
-						<span class="fa fa-minus"></span>
+						<button class="fa fa-minus" ng-click="decrease(item)"></button>
 						<span class="numbers-products">{{ item.quantity }}</span>
-						<span class="fa fa-plus"></span>
+						<button class="fa fa-plus" ng-click="increase(item)"></button>
 					</div>
 				</div>
-				<div class="col-sm-2 price">{{ item.product.price * item.quantity + item.product.currency }}</div>
+				<div class="col-sm-2 price">{{ item.totalPrice + item.product.currency }}</div>
 			</div>
 		</div>
 		<div class="col-md-4 cart-info">
 			<div class="row item-title">
 				<div>Total</div>
+			</div>
+			<div class="row item-title">
 			</div>
 		</div>
 	</div>
