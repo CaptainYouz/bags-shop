@@ -35,8 +35,26 @@ var getCategory = function (req, res, next) {
 	return next();
 };
 
-var getProducts = function (req, res, next) {
+var getCategoryProducts = function (req, res, next) {
 	var response = _.where(products, { 'categoryId' : parseInt(req.params.categoryId) });
+
+	if (response.length > 0) {
+		res.send(response);
+		res.send(200);
+	} else {
+		res.send(404);
+	}
+	return next();
+};
+
+var getProducts = function (req, res, next) {
+	var response = [];
+	var ids = req.params.ids.split('-');
+
+	ids.forEach(function (id) {
+		var product = _.find(products, function (pr) { return pr.id == parseInt(id); });
+		if (product) response.push(product);
+	})
 
 	if (response.length > 0) {
 		res.send(response);
@@ -63,7 +81,8 @@ var getProduct = function (req, res, next) {
 
 server.get('/categories', getCategories);
 server.get('/category/:id', getCategory);
-server.get('/products/:categoryId', getProducts);
+server.get('/category/:categoryId/products', getCategoryProducts);
+server.get('/products/:ids', getProducts)
 server.get('/product/:productId', getProduct);
 
 server.listen(conf.get('server:port'), function() {
