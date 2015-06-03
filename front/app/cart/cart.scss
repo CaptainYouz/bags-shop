@@ -1,0 +1,32 @@
+.cart {
+	.content {
+		margin-top: 50px;
+		.items {
+			.item-title {
+				text-align: center;
+				text-transform: uppercase;
+			}
+			.item, .item-title {
+				div {
+				}
+			}
+			.item {
+				text-align: right;
+
+				.delete {
+				}
+
+				.info {
+					text-align: left;
+				}
+				.image {
+					img {
+						width: 100%;
+					}
+				}
+			}
+		}
+		.cart-info {
+		}
+	}
+}

@@ -58,10 +58,17 @@
 		}
 
 		.cart {
-			display: inline-block;
-			font-size: 27px;
-			i {
-				padding: 17px;
+			font-size: 17px;
+			.items-number {
+				font-size: 11px;
+				padding: 2px 7px 2px 7px;
+				border-radius: 100%;
+				background-color: $font-color;
+				color: white;
+				font-family: 'Arial';
+				font-style: normal;
+				position: absolute;
+				margin: -3px 0 0 5px;
 			}
 		}
 	}

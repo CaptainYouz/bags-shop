@@ -6,6 +6,6 @@
 	</ul>
 	<ul class="categories">
 		<li ng-repeat="category in categories track by $index" ui-sref="products({ categoryId : category.id })">{{ category.name }}</li>
-		<li><i class="glyphicon glyphicon-shopping-cart"></i></li>
+		<li ui-sref="cart" class="cart"><i class="fa fa-shopping-cart"></i><i ng-show="getItemsNb()" class="items-number">{{ getItemsNb() }}</i></li>
 	</ul>
 </div>

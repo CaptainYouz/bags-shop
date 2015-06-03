@@ -1,7 +1,8 @@
 var app = angular.module('awsatApp', [
 	'ui.router',
 	'angular-loading-bar',
-	'awsatApp.catalog'
+	'awsatApp.catalog',
+	'awsatApp.cart'
 ]);
 
 app.config(function ($urlRouterProvider, $stateProvider) {
@@ -22,8 +23,11 @@ app.config(function ($urlRouterProvider, $stateProvider) {
 			}
 		},
 		resolve: {
-			categories: function (Catalog) {
-				return Catalog.init();
+			Cart: function (CartService) {
+				return CartService.init();
+			},
+			categories: function (CatalogService) {
+				return CatalogService.init();
 			}
 		}
 	});

@@ -1,0 +1,26 @@
+<div class="container cart">
+	<div class="row content-title">
+		<span>Cart</span>
+	</div>
+	<div class="row content">
+		<div class="col-sm-8 items">
+			<div class="row item-title">
+				<div class="col-sm-offset-4 col-sm-4">Item</div>
+				<div class="col-sm-2">Quantity</div>
+				<div class="col-sm-2">Price</div>
+			</div>
+			<div class="row item" ng-repeat="item in items track by $index">
+				<div class="col-sm-1 delete"><i class="fa fa-minus-square-o"></i></div>
+				<div class="col-sm-2 image"><img src="{{ item.product.imgUrl }}" alt="{{ item.product.name }}"></div>
+				<div class="col-sm-5 info">
+					<div class="name">{{ item.product.name }}</div>
+					<div class="brand">{{ item.product.brand }}</div>
+					<div class="short-description">{{ item.product.shortDesc }}</div>
+				</div>
+				<div class="col-sm-2 quantity">{{ item.quantity }}</div>
+				<div class="col-sm-2 price">{{ item.price }}</div>
+			</div>
+		</div>
+		<div class="col-sm-4 cart-info"></div>
+	</div>
+</div>

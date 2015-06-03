@@ -22,8 +22,8 @@ catalog.config(function ($stateProvider) {
 			}
 		},
 		resolve: {
-			products : function ($stateParams, Catalog) {
-				return Catalog.getProducts($stateParams.categoryId);
+			products : function ($stateParams, CatalogService) {
+				return CatalogService.getProducts($stateParams.categoryId);
 			}
 		}
 	})
@@ -37,8 +37,8 @@ catalog.config(function ($stateProvider) {
 			}
 		},
 		resolve: {
-			product: function ($stateParams, Catalog) {
-				return Catalog.getProduct($stateParams.categoryId, $stateParams.productId);
+			product: function ($stateParams, CatalogService) {
+				return CatalogService.getProduct($stateParams.categoryId, $stateParams.productId);
 			}
 		}
 	});

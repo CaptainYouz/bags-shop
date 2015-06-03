@@ -1,4 +1,4 @@
-catalog.factory('Catalog', function ($http) {
+catalog.factory('CatalogService', function ($http) {
 	_categories = [];
 	_products   = [];
 
@@ -20,7 +20,7 @@ catalog.factory('Catalog', function ($http) {
 			if (products) {
 				return products.elements;
 			} else {
-				return $http.get('@@api/products/' + categoryId).then(function (res) {
+				return $http.get('@@api/category/' + categoryId + '/products').then(function (res) {
 					_products.push({ id: categoryId, elements : res.data });
 					return res.data;
 				});
