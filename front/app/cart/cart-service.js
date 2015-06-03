@@ -18,11 +18,11 @@ cart.factory('CartService', function ($http) {
 					// - the complete detail of the product,
 					item.product = _.find(products, function (product) { return product.id == item.id; });
 					// - the total price of the current item (productPrice * nbItems)
-					item.totalPrice = item.product.price * item.nb;
+					item.totalPrice = item.product.price * item.quantity;
 					// - the total price of the cart
 					Cart.totalPrice += item.totalPrice;
 					// - the total numbers of items
-					Cart.nbItems += item.nb;
+					Cart.nbItems += item.quantity;
 				});
 
 				return Cart;
@@ -32,13 +32,13 @@ cart.factory('CartService', function ($http) {
 			var item = _.find(Cart.items, function (it) { return it.id == product.id; });
 
 			if (item) {
-				item.nb++;
+				item.quantity++;
 				item.totalPrice += item.product.price;
 			}
 			else {
 				Cart.items.push({
 					id: product.id,
-					nb: 1,
+					quantity: 1,
 					product: product,
 					totalPrice: product.price
 				});

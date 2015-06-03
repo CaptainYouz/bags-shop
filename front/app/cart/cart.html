@@ -3,24 +3,33 @@
 		<span>Cart</span>
 	</div>
 	<div class="row content">
-		<div class="col-sm-8 items">
+		<div class="col-md-8 items">
 			<div class="row item-title">
-				<div class="col-sm-offset-4 col-sm-4">Item</div>
+				<div class="col-sm-offset-3 col-sm-5">Item</div>
 				<div class="col-sm-2">Quantity</div>
 				<div class="col-sm-2">Price</div>
 			</div>
 			<div class="row item" ng-repeat="item in items track by $index">
-				<div class="col-sm-1 delete"><i class="fa fa-minus-square-o"></i></div>
+				<div class="col-sm-1 text-center delete"><i class="fa fa-close"></i></div>
 				<div class="col-sm-2 image"><img src="{{ item.product.imgUrl }}" alt="{{ item.product.name }}"></div>
 				<div class="col-sm-5 info">
-					<div class="name">{{ item.product.name }}</div>
-					<div class="brand">{{ item.product.brand }}</div>
+					<div class="name">{{ item.product.name }} - <span class="brand">{{ item.product.brand }}</span></div>
 					<div class="short-description">{{ item.product.shortDesc }}</div>
 				</div>
-				<div class="col-sm-2 quantity">{{ item.quantity }}</div>
-				<div class="col-sm-2 price">{{ item.price }}</div>
+				<div class="col-sm-2 quantity">
+					<div class="selectors">
+						<span class="fa fa-minus"></span>
+						<span class="numbers-products">{{ item.quantity }}</span>
+						<span class="fa fa-plus"></span>
+					</div>
+				</div>
+				<div class="col-sm-2 price">{{ item.product.price * item.quantity + item.product.currency }}</div>
 			</div>
 		</div>
-		<div class="col-sm-4 cart-info"></div>
+		<div class="col-md-4 cart-info">
+			<div class="row item-title">
+				<div>Total</div>
+			</div>
+		</div>
 	</div>
 </div>
