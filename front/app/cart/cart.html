@@ -2,7 +2,7 @@
 	<div class="row content-title">
 		<span>Cart</span>
 	</div>
-	<div class="row content">
+	<div ng-show="getItems().length" class="row content">
 		<div class="col-md-8 items">
 			<div class="row item-title">
 				<div class="col-sm-offset-3 col-sm-5">Item</div>
@@ -25,10 +25,7 @@
 						<button class="fa fa-plus" ng-click="increase(item)"></button>
 					</div>
 				</div>
-				<div class="col-sm-2 price">{{ item.totalPrice + item.product.currency }}</div>
-			</div>
-			<div ng-show="!getItems()">
-				You don't have any item yet.
+				<div class="col-sm-2 price">{{ item.totalPrice + currency }}</div>
 			</div>
 		</div>
 		<div class="col-md-4 cart-info">
@@ -42,10 +39,15 @@
 
 			<div class="row block-title">Cart</div>
 			<div class="row total">
-				<div class="col-sm-6 left">Subtotal</div><div class="col-sm-6 right">{{ getTotalCartPrice() }}</div>
+				<div class="col-sm-6 left">Subtotal</div><div class="col-sm-6 right">{{ getTotalCartPrice() + currency }}</div>
 				<div class="col-sm-6 left">Shipping</div><div class="col-sm-6 right">190</div>
 				<div class="col-sm-6 left">Taxs</div><div class="col-sm-6 right">190</div>
 			</div>
 		</div>
+	</div>
+	<div ng-show="!getItems().length" class="row no-content">
+		It seems you didn't choose any bags yet.<br/>
+		Take a look to our catalog to shop some bags.<br/>
+		<button ui-sref="catalog">See articles</button>
 	</div>
 </div>

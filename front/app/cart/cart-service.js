@@ -33,20 +33,20 @@ cart.factory('CartService', function ($http, $state, Utils) {
 
 						// for each stored item
 						items.forEach(function (item) {
-							// we check if the product exist and if quantity is ok
+							// - we check if the product exist and if quantity is ok
 							var product = _.find(products, function (product) { return product.id == item.id; });
 							item.quantity = isNaN(item.quantity) ? 1 : item.quantity;
 
 							if (product) {
 								// - we put it item in items list
 								Cart.items.push(item);
-								// - the complete detail of the product,
+								// - we save the complete detail of the product,
 								item.product = product;
-								// - the total price of the current item (productPrice * nbItems)
+								// - we calculate the total price of the current item (productPrice * nbItems)
 								item.totalPrice = item.product.price * item.quantity;
-								// - the total price of the cart
+								// - we update the total price of the cart
 								Cart.totalPrice += item.totalPrice;
-								// - the total numbers of items
+								// - we update the total numbers of items
 								Cart.nbItems += item.quantity;
 							}
 						});
@@ -126,6 +126,11 @@ cart.factory('CartService', function ($http, $state, Utils) {
 				Cart.removeStoredCart();
 				return Cart;
 			}
+		},
+		getPaymentInfo: function () {
+			return $http.get('@@api/paymentInformations').then(function (res) {
+				return res.data;
+			});
 		}
 	};
 });

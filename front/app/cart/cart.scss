@@ -1,6 +1,4 @@
 .cart {
-	div {
-	}
 	.content {
 		margin-top: 50px;
 
@@ -91,7 +89,7 @@
 			}
 			.total {
 				div {
-					padding: 20px;
+					padding: 10px;
 				}
 				.left {
 					text-transform: capitalize;
@@ -102,6 +100,21 @@
 					font-size: 17px;
 				}
 			}
+		}
+	}
+	.no-content {
+		text-align: center;
+		line-height: 40px;
+		padding-top: 30px;
+		button {
+			background-color: $font-color;
+			color: white;
+			font-family: $fontOne;
+			border: 1px;
+			line-height: 20px;
+			padding: 10px;
+			text-transform: uppercase;
+			margin-top: 30px;
 		}
 	}
 }

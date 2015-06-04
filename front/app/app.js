@@ -23,6 +23,9 @@ app.config(function ($urlRouterProvider, $stateProvider) {
 			}
 		},
 		resolve: {
+			paymentInfo: function (CartService) {
+				return CartService.getPaymentInfo();
+			},
 			Cart: function (CartService) {
 				return CartService.init();
 			},
