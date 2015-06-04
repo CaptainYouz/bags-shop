@@ -1,4 +1,4 @@
-catalog.controller('ProductController', function ($scope, product, Cart) {
+catalog.controller('ProductController', function ($scope, $rootScope, product, Cart) {
 	$scope.product = product;
-	$scope.addToCart = Cart.addProduct;
+	$scope.addToCart = Cart.addItem;
 });

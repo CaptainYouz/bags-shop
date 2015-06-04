@@ -1,10 +1,20 @@
-cart.factory('CartService', function ($http) {
+cart.factory('CartService', function ($http, $state, Utils) {
 	var Cart = {
 		items: [],
 		nbItems: 0,
 		totalPrice: 0,
-		getTotalItemsNb: function () { return Cart.nbItems; },
-		getItems: function () { return Cart.items; },
+		storeCurrentCart: function () {
+			window.localStorage.setItem('aswatCart', JSON.stringify(Cart.items));
+		},
+		getTotalItemsNb: function () {
+			return Cart.nbItems;
+		},
+		getItems: function () {
+			return Cart.items;
+		},
+		getItem: function (itemId) {
+			return _.find(Cart.items, function (it) { return it.id == itemId; })
+		},
 		initItems: function (items) {
 			Cart.items = items;
 			var ids = _.pluck(Cart.items, 'id').join('-');
@@ -28,8 +38,8 @@ cart.factory('CartService', function ($http) {
 				return Cart;
 			});
 		},
-		addProduct: function (product) {
-			var item = _.find(Cart.items, function (it) { return it.id == product.id; });
+		addItem: function (product, showPopup) {
+			var item = Cart.getItem(product.id);
 
 			if (item) {
 				item.quantity++;
@@ -45,16 +55,30 @@ cart.factory('CartService', function ($http) {
 			}
 
 			Cart.nbItems++;
-			window.localStorage.setItem('aswatCart', JSON.stringify(Cart.items));
+			Cart.storeCurrentCart();
+
+			if (showPopup) Utils.goToCartPopUp(product);
 		},
-		increaseQuantity: function (itemId) {
-			var item = _.find(Cart.items, function (it) { return it.id == itemId; });
+		decreaseItemQuantity: function (itemId) {
+			var item = Cart.getItem(itemId);
 
 			if (item.quantity > 1) {
 				item.quantity--;
 				item.totalPrice -= item.product.price;
+				Cart.nbItems--;
 			}
-			window.localStorage.setItem('aswatCart', JSON.stringify(Cart.items));
+
+			Cart.storeCurrentCart();
+		},
+		removeItem: function (item, callback) {
+			var removeCallback = function () {
+				var removedItem = _.remove(Cart.items, function (it) { return it.id == item.id; });
+				Cart.nbItems -= removedItem[0].quantity;
+				Cart.storeCurrentCart();
+				callback();
+			};
+
+			Utils.removeItemPopUp(item, removeCallback);
 		}
 	};
 

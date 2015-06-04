@@ -1,4 +1,5 @@
 $font-color: #3f3f3f;
+$fontOne: 'Lato';
 
 body {
 	font-family: 'Lato';
@@ -28,6 +29,9 @@ body {
 	}
 }
 
+.sweet-alert {
+	font-family: $fontOne;
+}
 
 // Hover effect from the Hover.css lib
 // See https://github.com/IanLunn/Hover

@@ -9,7 +9,10 @@
 			.content {
 				display: inline-block;
 
-				img { width: 100%; }
+				img {
+					z-index: 1;
+					width: 100%;
+				}
 				.product-title {
 					text-align: left;
 					margin: 40px 0 15px 0;
@@ -87,6 +90,7 @@
 		.add-to-cart:hover {
 			color: black;
 			cursor: pointer;
+			text-decoration: underline;
 		}
 		.description {
 			margin: 20px 20px 0 0;

@@ -15,6 +15,11 @@
 					vertical-align: middle;
 					float: none;
 				}
+				button {
+					background-color: rgba(0,0,0,0);
+					border: 0;
+					padding:0;
+				}
 				margin-top: 10px;
 				text-align: right;
 
@@ -47,11 +52,6 @@
 						background-color: $font-color;
 						font-size: 18px;
 						color: white;
-						button {
-							background-color: rgba(0,0,0,0);
-							border: 0;
-							padding:0;
-						}
 						.fa {
 							font-style: normal;
 							padding: 1px;

@@ -11,6 +11,10 @@
     "bootstrap": "~3.3.4",
     "angular-ui-router": "~0.2.15",
     "lodash": "~3.9.3",
-    "angular-loading-bar": "~0.7.1"
+    "angular-loading-bar": "~0.7.1",
+    "sweetalert": "~1.0.1"
+  },
+  "resolutions": {
+    "angular": "~1.4.0"
   }
 }
