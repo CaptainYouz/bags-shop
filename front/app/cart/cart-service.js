@@ -3,8 +3,15 @@ cart.factory('CartService', function ($http, $state, Utils) {
 		items: [],
 		nbItems: 0,
 		totalPrice: 0,
+		removeStoredCart: function () {
+			window.localStorage.removeItem('aswatCart');
+		},
 		storeCurrentCart: function () {
-			window.localStorage.setItem('aswatCart', JSON.stringify(Cart.items));
+			if (Cart.nbItems > 0) window.localStorage.setItem('aswatCart', JSON.stringify(Cart.items));
+			else Cart.removeStoredCart();
+		},
+		getTotalCartPrice: function () {
+			return Cart.totalPrice;
 		},
 		getTotalItemsNb: function () {
 			return Cart.nbItems;
@@ -16,27 +23,45 @@ cart.factory('CartService', function ($http, $state, Utils) {
 			return _.find(Cart.items, function (it) { return it.id == itemId; })
 		},
 		initItems: function (items) {
-			Cart.items = items;
-			var ids = _.pluck(Cart.items, 'id').join('-');
+			var ids = _.pluck(items, 'id').join('-');
 
-			// we retreive products from ids stored in localStorage
-			return $http.get('@@api/products/' + ids).then(function (res) {
-				var products = res.data;
+			if (ids) {
+				// we retreive products from ids stored in localStorage
+				return $http.get('@@api/products/' + ids).then(
+					function (res) {
+						var products = res.data;
 
-				// for each items in the cart we set
-				Cart.items.forEach(function (item) {
-					// - the complete detail of the product,
-					item.product = _.find(products, function (product) { return product.id == item.id; });
-					// - the total price of the current item (productPrice * nbItems)
-					item.totalPrice = item.product.price * item.quantity;
-					// - the total price of the cart
-					Cart.totalPrice += item.totalPrice;
-					// - the total numbers of items
-					Cart.nbItems += item.quantity;
-				});
+						// for each stored item
+						items.forEach(function (item) {
+							// we check if the product exist and if quantity is ok
+							var product = _.find(products, function (product) { return product.id == item.id; });
+							item.quantity = isNaN(item.quantity) ? 1 : item.quantity;
 
-				return Cart;
-			});
+							if (product) {
+								// - we put it item in items list
+								Cart.items.push(item);
+								// - the complete detail of the product,
+								item.product = product;
+								// - the total price of the current item (productPrice * nbItems)
+								item.totalPrice = item.product.price * item.quantity;
+								// - the total price of the cart
+								Cart.totalPrice += item.totalPrice;
+								// - the total numbers of items
+								Cart.nbItems += item.quantity;
+							}
+						});
+
+						// finally, we save cart to keep the localstorage value clean
+						Cart.storeCurrentCart();
+						return Cart;
+					},
+					function (res) {
+						Utils.errorPopUp('Sorry, something went wrong with your cart.');
+						Cart.removeStoredCart();
+						return Cart;
+					}
+				);
+			} else return Cart;
 		},
 		addItem: function (product, showPopup) {
 			var item = Cart.getItem(product.id);
@@ -55,6 +80,7 @@ cart.factory('CartService', function ($http, $state, Utils) {
 			}
 
 			Cart.nbItems++;
+			Cart.totalPrice += product.price || item.product.price;
 			Cart.storeCurrentCart();
 
 			if (showPopup) Utils.goToCartPopUp(product);
@@ -65,6 +91,7 @@ cart.factory('CartService', function ($http, $state, Utils) {
 			if (item.quantity > 1) {
 				item.quantity--;
 				item.totalPrice -= item.product.price;
+				Cart.totalPrice -= item.product.price;
 				Cart.nbItems--;
 			}
 
@@ -74,6 +101,7 @@ cart.factory('CartService', function ($http, $state, Utils) {
 			var removeCallback = function () {
 				var removedItem = _.remove(Cart.items, function (it) { return it.id == item.id; });
 				Cart.nbItems -= removedItem[0].quantity;
+				Cart.totalPrice -= removedItem[0].product.price * removedItem[0].quantity;
 				Cart.storeCurrentCart();
 				callback();
 			};
@@ -84,8 +112,20 @@ cart.factory('CartService', function ($http, $state, Utils) {
 
 	return {
 		init: function () {
-			localStorageCart = window.localStorage.getItem('aswatCart');
-			return (localStorageCart) ? Cart.initItems(JSON.parse(localStorageCart)) : Cart;
+			jsonStoredCart = window.localStorage.getItem('aswatCart');
+
+			try {
+				if (jsonStoredCart) {
+					var storedCart = JSON.parse(jsonStoredCart);
+					return (storedCart && storedCart.length) ? Cart.initItems(storedCart) : Cart;
+				} else {
+					return Cart;
+				}
+			} catch (e) {
+				Utils.errorPopUp('Sorry, something went wrong with your cart.');
+				Cart.removeStoredCart();
+				return Cart;
+			}
 		}
 	};
 });

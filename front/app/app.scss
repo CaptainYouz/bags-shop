@@ -27,6 +27,18 @@ body {
 			border-bottom: 1px solid black;
 		}
 	}
+
+	.input-group {
+		input, .input-group-addon {
+			border-radius: 0;
+		}
+		.input-group-addon {
+			border: 0;
+			text-transform: uppercase;
+			background-color: $font-color;
+			color: white;
+		}
+	}
 }
 
 .sweet-alert {

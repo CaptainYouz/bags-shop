@@ -28,6 +28,9 @@ app.factory('Utils', function ($http, $state) {
 				confirmButtonColor: '#3f3f3f',
 				closeOnConfirm: true
 			}, callback);
+		},
+		errorPopUp: function (errorMsg) {
+			swal('Oops...', errorMsg, 'error');
 		}
 	};
 });
