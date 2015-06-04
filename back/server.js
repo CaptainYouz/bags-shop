@@ -2,7 +2,8 @@ var conf 		 = require('nconf'),
 	_			 = require('lodash'),
 	restify 	 = require('restify'),
 	categories	 = require('./models/categories.json'),
-	products 	 = require('./models/products.json')
+	products 	 = require('./models/products.json'),
+	paymentInfo  = require('./models/paymentInfo.json');
 
 conf.file('conf/aswat_conf.json');
 
@@ -16,8 +17,12 @@ server.use(function (req, res, next) {
 });
 
 var getCategories = function (req, res, next) {
-	res.send(categories);
-	res.send(200);
+	if (categories) {
+		res.send(categories);
+		res.send(200);
+	} else {
+		res.send(404);
+	}
 	return next();
 };
 
@@ -79,11 +84,23 @@ var getProduct = function (req, res, next) {
 	return next();
 };
 
+var getPaymentInfo = function (req, res, next) {
+	console.log('helo');
+	if (paymentInfo) {
+		res.send(paymentInfo);
+		res.send(200);
+	} else {
+		res.send(404);
+	}
+	return next();
+};
+
 server.get('/categories', getCategories);
 server.get('/category/:id', getCategory);
 server.get('/category/:categoryId/products', getCategoryProducts);
 server.get('/products/:ids', getProducts)
 server.get('/product/:productId', getProduct);
+server.get('/paymentInformations', getPaymentInfo);
 
 server.listen(conf.get('server:port'), function() {
 	console.log('%s listening at %s', server.name, server.url);

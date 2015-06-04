@@ -1,0 +1,35 @@
+{
+	"currency": "€",
+	"taxPercentage": 10,
+	"shipping": [
+		{
+			"name": "normal",
+			"description": "within 6 days",
+			"price": 4
+		},
+		{
+			"name": "express",
+			"description": "within 2 or 3 days",
+			"price": 10
+		},
+		{
+			"name": "one day",
+			"description": "tomorrow",
+			"price": 14
+		}
+	],
+	"dicountCodes": [
+		{
+			"name": "eric",
+			"percentage": 20
+		},
+		{
+			"name": "aswat",
+			"percentage": 10
+		},
+		{
+			"name": "dubaï",
+			"percentage": 5
+		}
+	]
+}
