@@ -1,6 +1,7 @@
 var app = angular.module('awsatApp', [
 	'ui.router',
 	'angular-loading-bar',
+	'angularUtils.directives.uiBreadcrumbs',
 	'awsatApp.catalog',
 	'awsatApp.cart'
 ]);

@@ -1,6 +1,7 @@
+<ui-breadcrumbs displayname-property="data.breadcrumbLabel" template-url="/templates/breadcrumb.tpl.html"></ui-breadcrumbs>
 <div class="container products">
 	<div class="row content-title">
-		<span>{{ category.name }}</span>
+		<span>List of {{ category.name }}</span>
 	</div>
 	<div class="row products-list">
 		<div class="col-sm-3 product" ng-repeat="product in products track by $index">

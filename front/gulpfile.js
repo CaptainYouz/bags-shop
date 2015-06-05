@@ -18,7 +18,8 @@ var paths = {
 			'bower_components/sweetalert/dist/sweetalert.min.js',
 			'bower_components/angular/angular.js',
 			'bower_components/angular-ui-router/release/angular-ui-router.js',
-			'bower_components/angular-loading-bar/build/loading-bar.min.js'
+			'bower_components/angular-loading-bar/build/loading-bar.min.js',
+			'bower_components/angular-utils-ui-breadcrumbs/uiBreadcrumbs.js'
 		],
 		src: [
 			app + '/app.js',
@@ -30,7 +31,7 @@ var paths = {
 		]
 	},
 	partials: [
-		{ files: [ app + '/**/*.html', '!' + app + '/index.html' ] }
+		{ files: [ app + '/**/*.html', '!' + app + '/**/*.tpl.html', '!' + app + '/index.html' ] }
 	],
 	css: [
 		'bower_components/bootstrap/dist/css/bootstrap.css',
@@ -49,6 +50,9 @@ var paths = {
 	],
 	misc: [
 		app + '/index.html', app + '/404.html'
+	],
+	templates: [
+		app + '/utils/**/*.tpl.html'
 	]
 };
 
@@ -112,6 +116,11 @@ gulp.task('copy', function () {
 		.pipe(gulp.dest(dist))
 		.pipe(livereload());
 
+	gulp.src(paths.templates)
+		.pipe(plumber())
+		.pipe(gulp.dest(dist + '/templates/'))
+		.pipe(livereload());
+
 	gulp.src(paths.fonts)
 		.pipe(plumber())
 		.pipe(gulp.dest(dist + '/fonts/'));
@@ -128,6 +137,7 @@ gulp.task('watch', function () {
 	gulp.watch(paths.js.src, ['js']);
 	gulp.watch(paths.sass, ['styles']);
 	gulp.watch(paths.misc, ['copy']);
+	gulp.watch(paths.templates, ['copy']);
 	paths.partials.forEach(function (partials) {
 		gulp.watch(partials.files, ['js']);
 	});

@@ -10,6 +10,9 @@ catalog.config(function ($stateProvider) {
 				templateUrl: 'catalog/catalog.html',
 				controller: 'CatalogController'
 			}
+		},
+		data: {
+			breadcrumbLabel: 'Categories'
 		}
 	})
 	.state('products', {
@@ -22,9 +25,17 @@ catalog.config(function ($stateProvider) {
 			}
 		},
 		resolve: {
-			products : function ($stateParams, CatalogService) {
+			category: function ($stateParams, categories) {
+				return _.find(categories, function (categ) {
+					return categ.id == $stateParams.categoryId;
+				});
+			},
+			products: function ($stateParams, CatalogService) {
 				return CatalogService.getProducts($stateParams.categoryId);
 			}
+		},
+		data: {
+			breadcrumbLabel: '{{ category.name }}'
 		}
 	})
 	.state('product', {
@@ -40,6 +51,9 @@ catalog.config(function ($stateProvider) {
 			product: function ($stateParams, CatalogService) {
 				return CatalogService.getProduct($stateParams.categoryId, $stateParams.productId);
 			}
+		},
+		data: {
+			breadcrumbLabel: '{{ product.name }}'
 		}
 	});
 });
