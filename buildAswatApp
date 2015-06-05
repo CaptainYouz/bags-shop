@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd ./front && npm install && bower install && gulp
+cd ../back && npm install && cd ..

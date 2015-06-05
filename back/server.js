@@ -85,7 +85,6 @@ var getProduct = function (req, res, next) {
 };
 
 var getPaymentInfo = function (req, res, next) {
-	console.log('helo');
 	if (paymentInfo) {
 		res.send(paymentInfo);
 		res.send(200);
