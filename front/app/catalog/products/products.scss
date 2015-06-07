@@ -39,20 +39,6 @@
 }
 
 .product {
-	padding: 0;
-	.next {
-		padding: 0;
-		margin-bottom: 30px;
-		text-align: right;
-		i {
-			margin-left: 20px;
-			font-size: 30px;
-		}
-		i:hover {
-			color: black;
-			cursor: pointer;
-		}
-	}
 	.image {
 		text-align: right;
 		img {
@@ -60,8 +46,6 @@
 		}
 	}
 	.product-description {
-		padding: 0;
-
 		.name {
 			font-size: 25px;
 			text-transform: uppercase;
@@ -75,7 +59,7 @@
 			font-weight: 900;
 			position: absolute;
 			top: 0;
-			right: 0;
+			right: 10px;
 			font-size: 35px;
 		}
 		.add-to-cart {
@@ -92,9 +76,21 @@
 			text-decoration: underline;
 		}
 		.description {
-			margin: 20px 20px 0 0;
+			margin: 30px 0 0 0;
 			line-height: 25px;
 			text-align: justify;
+		}
+	}
+}
+
+@media screen and (max-width: $xs-screen) {
+	.product {
+		.product-description {
+			margin-top: 20px;
+			padding-left: 25px;
+			.name { font-size: 18px; }
+			.brand { font-size: 13px; }
+			.price { font-size: 28px; }
 		}
 	}
 }

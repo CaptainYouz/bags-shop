@@ -4,7 +4,7 @@
 		<span>List of {{ category.name }}</span>
 	</div>
 	<div class="row products-list">
-		<div class="col-sm-3 product" ng-repeat="product in products track by $index">
+		<div class="col-sm-3  product" ng-repeat="product in products track by $index">
 			<div class="content" ui-sref="product({ productId : product.id })">
 				<img src="{{ product.imgUrl }}" class="hvr-float-shadow">
 				<div class="product-title">

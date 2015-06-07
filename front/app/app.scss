@@ -68,6 +68,18 @@ body {
 				font-size: 15px;
 			}
 		}
+
+		.body-content {
+			margin-top: 0;
+		}
+
+		.breadcrumb-template {
+			margin-bottom: 15px;
+			padding: 0;
+			.breadcrumb {
+				padding: 0;
+			}
+		}
 	}
 }
 

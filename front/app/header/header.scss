@@ -2,6 +2,7 @@
 	background-color: white;
 	border: 0;
 	color: $font-color;
+
 	.brand {
 		float: none;
 		padding: 30px 0 30px 0;
@@ -90,8 +91,9 @@
 
 @media screen and (max-width: $xs-screen) {
 	.header {
+		margin-bottom: 0;
 		.menu {
-			padding: 0;
+			margin-bottom: 20px;
 			.links {
 				.sections {
 					li {
