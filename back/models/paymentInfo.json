@@ -1,7 +1,7 @@
 {
 	"currency": "€",
 	"taxPercentage": 10,
-	"shipping": [
+	"shippingMethods": [
 		{
 			"name": "normal",
 			"description": "within 6 days",

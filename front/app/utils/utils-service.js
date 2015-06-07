@@ -31,6 +31,17 @@ app.factory('Utils', function ($http, $state) {
 		},
 		errorPopUp: function (errorMsg) {
 			swal('Oops...', errorMsg, 'error');
+		},
+		successPopUp: function (successMsg) {
+			swal('Well done !', successMsg, 'success');
+		},
+		specialMessagePopUp: function (title, msg, confirmMsg, cancelMsg) {
+			swal({
+				title: title,
+				text: msg,
+				html: true,
+				confirmButtonText: confirmMsg,
+			})
 		}
 	};
 });

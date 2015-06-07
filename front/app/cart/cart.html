@@ -25,23 +25,42 @@
 						<button class="fa fa-plus" ng-click="increase(item)"></button>
 					</div>
 				</div>
-				<div class="col-sm-2 price">{{ item.totalPrice + currency }}</div>
+				<div class="col-sm-2 price">{{ item.totalPrice + paymentInfo.currency }}</div>
 			</div>
 		</div>
 		<div class="col-md-4 cart-info">
 			<div class="row block-title">You have a discount code ?</div>
 			<div class="row discount">
 				<div class="input-group">
-					<input type="text" class="form-control input-sm" placeholder="Enter your discount code">
-					<div class="input-group-addon">Apply</div>
+					<input type="text" class="form-control input-sm" placeholder="Enter your discount code" ng-model="discountCode">
+					<div ng-click="setDiscountCode(discountCode)" class="input-group-addon">Apply</div>
 				</div>
+				<div ng-show="discount" class="discount-validity">Your discount of {{ discount.percentage }}% is valid</div>
 			</div>
 
 			<div class="row block-title">Cart</div>
 			<div class="row total">
-				<div class="col-sm-6 left">Subtotal</div><div class="col-sm-6 right">{{ getTotalCartPrice() + currency }}</div>
-				<div class="col-sm-6 left">Shipping</div><div class="col-sm-6 right">190</div>
-				<div class="col-sm-6 left">Taxs</div><div class="col-sm-6 right">190</div>
+				<div class="row subtotal">
+					<div class="col-md-3 left">Subtotal</div><div class="col-md-9 right">{{ getTotalItemsPrice() + paymentInfo.currency }}</div>
+				</div>
+				<div class="row subtotal">
+					<div class="col-md-3 left">Shipping</div><div class="col-md-9 right shipping">
+						<select ng-model="shippingMethod" ng-options="shipping.name + '' for shipping in paymentInfo.shippingMethods"></select>
+						<div class="shipping-description">
+							<span>{{ shippingMethod.description }} -</span> {{ shippingMethod.price + paymentInfo.currency }}
+						</div>
+					</div>
+				</div>
+				<div class="row subtotal">
+					<div class="col-md-3 left">Taxs</div><div class="col-md-9 right">{{ paymentInfo.taxPercentage }}%</div>
+				</div>
+				<div class="row total-price">
+					<div class="col-md-3 left">Total</div><div class="col-md-9 right">{{ getTotalCartPrice(shippingMethod.price) + paymentInfo.currency }}</div>
+				</div>
+			</div>
+
+			<div class="row checkout">
+				<button ng-click="easterEag()">Proceed to checkout</button>
 			</div>
 		</div>
 	</div>

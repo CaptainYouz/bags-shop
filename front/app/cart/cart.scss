@@ -86,18 +86,64 @@
 			.discount {
 				margin-top: 30px;
 				font-size: 13px;
+				.discount-validity {
+					text-align: right;
+					margin-top: 20px;
+					font-size: 13px;
+					text-transform: none;
+					font-style: italic;
+					color: green;
+				}
 			}
 			.total {
-				div {
-					padding: 10px;
-				}
 				.left {
 					text-transform: capitalize;
+					font-style: italic;
 				}
 				.right {
 					text-align: right;
 					font-weight: bold;
 					font-size: 17px;
+					padding: 15px 0 0 30px;
+				}
+				.shipping {
+					select {
+						background-color: white;
+						font-weight: normal;
+						font-size: 12px;
+						border-radius: 0;
+						text-transform: capitalize;
+					}
+					.shipping-description {
+						span {
+							text-transform: lowercase;
+							font-style: italic;
+							font-weight: normal;
+							font-size: 15px;
+						}
+						margin-top: 10px;
+					}
+				}
+				.total-price {
+					font-weight: bold;
+					.left {
+						text-transform: uppercase;
+						font-style: normal;
+					}
+					.right {
+						font-size: 21px;
+					}
+				}
+			}
+			.checkout {
+				text-align: center;
+				button {
+					border: 0;
+					padding: 10px;
+					text-transform: uppercase;
+					background-color: $font-color;
+					color: white;
+					cursor: pointer;
 				}
 			}
 		}

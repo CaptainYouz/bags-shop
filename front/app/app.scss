@@ -39,6 +39,7 @@ body {
 			text-transform: uppercase;
 			background-color: $font-color;
 			color: white;
+			cursor: pointer;
 		}
 	}
 
@@ -46,7 +47,7 @@ body {
 		background-color: white;
 		border-radius: 0;
 		padding: 0;
-		margin-bottom: 70px;
+		margin-bottom: 30px;
 		.breadcrumb {
 			margin: 0;
 			font-family: Lato;

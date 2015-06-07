@@ -3,6 +3,8 @@ cart.factory('CartService', function ($http, $state, Utils) {
 		items: [],
 		nbItems: 0,
 		totalPrice: 0,
+		discountCode: false,
+		paymentInfo: {},
 		removeStoredCart: function () {
 			window.localStorage.removeItem('aswatCart');
 		},
@@ -10,7 +12,22 @@ cart.factory('CartService', function ($http, $state, Utils) {
 			if (Cart.nbItems > 0) window.localStorage.setItem('aswatCart', JSON.stringify(Cart.items));
 			else Cart.removeStoredCart();
 		},
-		getTotalCartPrice: function () {
+		setDiscountCode: function (discountCode) {
+			if (discountCode && discountCode != '') {
+				Cart.discountCode = _.find(Cart.paymentInfo.dicountCodes, function (code) {
+					return code.name == discountCode.toLowerCase();
+				});
+			}
+
+			return Cart.discountCode;
+		},
+		getTotalCartPrice: function (shippingPrice) {
+			var withoutTaxs = Cart.totalPrice + shippingPrice;
+			var tax = withoutTaxs / Cart.paymentInfo.taxPercentage;
+			var discount = (Cart.discountCode) ? ((Cart.discountCode.percentage / 100) * withoutTaxs) : 0;
+			return Math.round((withoutTaxs + tax - discount) * 100) / 100;
+		},
+		getTotalItemsPrice: function () {
 			return Cart.totalPrice;
 		},
 		getTotalItemsNb: function () {
@@ -129,7 +146,8 @@ cart.factory('CartService', function ($http, $state, Utils) {
 		},
 		getPaymentInfo: function () {
 			return $http.get('@@api/paymentInformations').then(function (res) {
-				return res.data;
+				Cart.paymentInfo = res.data;
+				return Cart.paymentInfo;
 			});
 		}
 	};
