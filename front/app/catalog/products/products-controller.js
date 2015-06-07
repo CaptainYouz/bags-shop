@@ -1,5 +1,5 @@
-catalog.controller('ProductsController', function ($scope, $state, $stateParams, category, products, paymentInfo) {
+catalog.controller('ProductsController', function ($scope, category, products, paymentInfo) {
 	$scope.category = category;
-	$scope.currency = paymentInfo.currency;
 	$scope.products = products;
+	$scope.currency = paymentInfo.currency;
 });

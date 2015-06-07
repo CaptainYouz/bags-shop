@@ -122,10 +122,6 @@ gulp.task('copy', function () {
 		.pipe(plumber())
 		.pipe(gulp.dest(dist + '/templates/'))
 		.pipe(livereload());
-
-	gulp.src(paths.fonts)
-		.pipe(plumber())
-		.pipe(gulp.dest(dist + '/fonts/'));
 });
 
 gulp.task('fonts', function () {

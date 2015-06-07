@@ -14,7 +14,6 @@ app.config(function ($urlRouterProvider, $stateProvider) {
 		views : {
 			'header': {
 				templateUrl: 'header/header.html',
-				controller: 'HeaderController'
 			},
 			'menu@awsatApp': {
 				templateUrl: 'header/menu/menu.html',
@@ -39,7 +38,3 @@ app.config(function ($urlRouterProvider, $stateProvider) {
 
 	$urlRouterProvider.otherwise('/catalog');
 });
-
-angular.module('myApp', ['angular-loading-bar']).config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
-	cfpLoadingBarProvider.latencyThreshold = 050;
-}])

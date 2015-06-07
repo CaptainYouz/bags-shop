@@ -35,7 +35,7 @@ app.factory('Utils', function ($http, $state) {
 		successPopUp: function (successMsg) {
 			swal('Well done !', successMsg, 'success');
 		},
-		specialMessagePopUp: function (title, msg, confirmMsg, cancelMsg) {
+		specialMessagePopUp: function (title, msg, confirmMsg) {
 			swal({
 				title: title,
 				text: msg,

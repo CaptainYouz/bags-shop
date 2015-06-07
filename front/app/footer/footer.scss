@@ -13,9 +13,8 @@ footer {
 		ul {
 			list-style: none;
 			padding: 0;
-			li {
-				margin-top: 10px;
-			}
+
+			li { margin-top: 10px; }
 		}
 	}
 	.social {
@@ -41,9 +40,7 @@ footer {
 @media screen and (max-width: $md-screen) {
 	footer {
 		.content-title {
-			span {
-				padding: 0 9px 3px 9px;
-			}
+			span { padding: 0 9px 3px 9px; }
 		}
 	}
 }
@@ -51,8 +48,7 @@ footer {
 @media screen and (max-width: $xs-screen) {
 	footer {
 		margin-top: 0;
-		.newsletter, .terms, .social {
-			margin-bottom: 40px;
-		}
+
+		.newsletter, .terms, .social { margin-bottom: 40px; }
 	}
 }

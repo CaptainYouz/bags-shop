@@ -4,27 +4,29 @@
 		text-align: center;
 		margin: 50px 0 100px 0;
 		font-size: 16px;
+
 		.conclusion {
 			display: block;
 			margin-top: 10px;
-			b {
-				font-size: 21px;
-			}
+
+			b { font-size: 21px; }
 		}
 	}
+
 	.categories {
 		padding: 10px 0 50px 0;
+
 		.category {
 			padding: 30px;
 			text-align: center;
 			text-transform: uppercase;
+
 			.content:hover {
 				cursor: pointer;
 				text-decoration: underline;
 			}
-			img {
-				width: 70%;
-			}
+
+			img { width: 70%; }
 
 			.name {
 				color: #5c5c5c;
@@ -39,14 +41,12 @@
 		.welcome {
 			margin: 0 0 50px 0;
 			font-size: 13px;
+
 			.conclusion {
-				b {
-					font-size: 18px;
-				}
+				b { font-size: 18px; }
 			}
 		}
-		.categories {
-			padding-bottom: 0;
-		}
+
+		.categories { padding-bottom: 0; }
 	}
 }

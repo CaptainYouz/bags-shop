@@ -6,8 +6,12 @@
 			<li><a href="https://fr.linkedin.com/in/anasmammeri">My account</a></li>
 		</ul>
 		<ul class="nav navbar-nav categories">
-			<li ng-repeat="category in categories track by $index" ui-sref="products({ categoryId : category.id })">{{ category.name }}</li>
-			<li ui-sref="cart" class="cart"><i class="fa fa-shopping-cart"></i><i ng-show="getItemsNb()" class="items-number">{{ getItemsNb() }}</i></li>
+			<li ng-repeat="category in categories track by $index" ui-sref="products({ categoryId : category.id })">
+				{{ category.name }}
+			</li>
+			<li ui-sref="cart" class="cart">
+				<i class="fa fa-shopping-cart"></i><i ng-show="getItemsNb()" class="items-number">{{ getItemsNb() }}</i>
+			</li>
 		</ul>
 	</div>
 </div>

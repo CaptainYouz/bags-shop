@@ -1,3 +1,7 @@
+/*
+	In this service, i return a full object
+	See catalogService to see another possible implementation of services
+*/
 cart.factory('CartService', function ($http, $state, Utils) {
 	var Cart = {
 		items: [],
@@ -5,9 +9,7 @@ cart.factory('CartService', function ($http, $state, Utils) {
 		totalPrice: 0,
 		discountCode: false,
 		paymentInfo: {},
-		removeStoredCart: function () {
-			window.localStorage.removeItem('aswatCart');
-		},
+		removeStoredCart: function () { window.localStorage.removeItem('aswatCart'); },
 		storeCurrentCart: function () {
 			if (Cart.nbItems > 0) window.localStorage.setItem('aswatCart', JSON.stringify(Cart.items));
 			else Cart.removeStoredCart();
@@ -25,17 +27,12 @@ cart.factory('CartService', function ($http, $state, Utils) {
 			var withoutTaxs = Cart.totalPrice + shippingPrice;
 			var tax = withoutTaxs / Cart.paymentInfo.taxPercentage;
 			var discount = (Cart.discountCode) ? ((Cart.discountCode.percentage / 100) * withoutTaxs) : 0;
+
 			return Math.round((withoutTaxs + tax - discount) * 100) / 100;
 		},
-		getTotalItemsPrice: function () {
-			return Cart.totalPrice;
-		},
-		getTotalItemsNb: function () {
-			return Cart.nbItems;
-		},
-		getItems: function () {
-			return Cart.items;
-		},
+		getTotalItemsPrice: function () { return Cart.totalPrice; },
+		getTotalItemsNb: function () { return Cart.nbItems; },
+		getItems: function () { return Cart.items; },
 		getItem: function (itemId) {
 			return _.find(Cart.items, function (it) { return it.id == itemId; })
 		},
@@ -86,8 +83,7 @@ cart.factory('CartService', function ($http, $state, Utils) {
 			if (item) {
 				item.quantity++;
 				item.totalPrice += item.product.price;
-			}
-			else {
+			} else {
 				Cart.items.push({
 					id: product.id,
 					quantity: 1,
@@ -117,6 +113,7 @@ cart.factory('CartService', function ($http, $state, Utils) {
 		removeItem: function (item, callback) {
 			var removeCallback = function () {
 				var removedItem = _.remove(Cart.items, function (it) { return it.id == item.id; });
+
 				Cart.nbItems -= removedItem[0].quantity;
 				Cart.totalPrice -= removedItem[0].product.price * removedItem[0].quantity;
 				Cart.storeCurrentCart();

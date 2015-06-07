@@ -2,6 +2,7 @@
 	<div class="row content-title">
 		<span>Cart</span>
 	</div>
+
 	<div ng-show="getItems().length" class="row content">
 		<div class="col-md-8 items">
 			<div class="row hidden-xs item-title">
@@ -9,15 +10,19 @@
 				<div class="col-sm-2">Quantity</div>
 				<div class="col-sm-2">Price</div>
 			</div>
+
 			<div class="row item" ng-repeat="item in getItems() track by $index">
 				<div class="col-xs-1 col-sm-1 delete">
 					<button class="fa fa-close" ng-click="remove(item)"></button>
 				</div>
+
 				<div class="hidden-xs col-sm-2 image"><img src="{{ item.product.imgUrl }}" alt="{{ item.product.name }}"></div>
+
 				<div class="col-xs-4 col-sm-5 info">
 					<div class="name">{{ item.product.name }} - <span class="brand">{{ item.product.brand }}</span></div>
 					<div class="hidden-xs short-description">{{ item.product.shortDesc }}</div>
 				</div>
+
 				<div class="col-xs-4 col-sm-2 quantity">
 					<div class="selectors">
 						<button class="fa fa-minus" ng-click="decrease(item)"></button>
@@ -25,9 +30,11 @@
 						<button class="fa fa-plus" ng-click="increase(item)"></button>
 					</div>
 				</div>
+
 				<div class="col-xs-2 col-sm-2 price">{{ item.totalPrice + paymentInfo.currency }}</div>
 			</div>
 		</div>
+
 		<div class="col-md-4 cart-info">
 			<div class="row block-title">You have a discount code ?</div>
 			<div class="row discount">
@@ -35,6 +42,7 @@
 					<input type="text" class="form-control input-sm" placeholder="Enter your discount code" ng-model="discountCode">
 					<div ng-click="setDiscountCode(discountCode)" class="input-group-addon">Apply</div>
 				</div>
+
 				<div ng-show="discount" class="discount-validity">Your discount of {{ discount.percentage }}% is valid</div>
 			</div>
 
@@ -43,6 +51,7 @@
 				<div class="row subtotal">
 					<div class="col-xs-3 left">Subtotal</div><div class="col-xs-9 right">{{ getTotalItemsPrice() + paymentInfo.currency }}</div>
 				</div>
+
 				<div class="row subtotal">
 					<div class="col-xs-3 left">Shipping</div><div class="col-xs-9 right shipping">
 						<select ng-model="shippingMethod" ng-options="shipping.name + '' for shipping in paymentInfo.shippingMethods"></select>
@@ -51,9 +60,11 @@
 						</div>
 					</div>
 				</div>
+
 				<div class="row subtotal">
 					<div class="col-xs-3 left">Taxs</div><div class="col-xs-9 right">{{ paymentInfo.taxPercentage }}%</div>
 				</div>
+
 				<div class="row total-price">
 					<div class="col-xs-3 left">Total</div><div class="col-xs-9 right">{{ getTotalCartPrice(shippingMethod.price) + paymentInfo.currency }}</div>
 				</div>
@@ -64,6 +75,7 @@
 			</div>
 		</div>
 	</div>
+
 	<div ng-show="!getItems().length" class="row no-content">
 		It seems you didn't choose any bags yet.<br/>
 		Take a look to our catalog to shop some bags.<br/>

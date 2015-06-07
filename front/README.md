@@ -6,7 +6,7 @@ Take a look at [this](../README.md)
 
 ### Architectural design
 
-This project is develop in a modular way and implement the MVC pattern.<br/>
+This project is developed in a modular way and implement the MVC pattern.<br/>
 Each features represent a module (<i>for example: cart, catalog...</i>)<br/>
 Each module contains files related to it (<i>for example: cart-controller.js, cart.html, cart.css</i>)
 

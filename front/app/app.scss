@@ -1,29 +1,27 @@
-$lightDark: #3f3f3f;
-$font-color: $lightDark;
-$fontOne: 'Lato';
+$light-dark: #3f3f3f;
+$font-color: $light-dark;
+$theme-font: 'Lato', Arial;
 
 $xs-screen: 768px;
 $md-screen: 1200px;
 
 body {
-	font-family: 'Lato';
+	font-family: $theme-font;
 	color: $font-color;
 
-	a {
-		color: $font-color;
-	}
+	a { color: $font-color; }
+
 	a:hover, a:active {
 		text-decoration: none;
 		color: black;
 	}
 
-	.body-content {
-		margin: 40px 0 100px 0;
-	}
+	.body-content { margin: 40px 0 100px 0; }
 
 	.content-title {
 		text-align: left;
 		padding-left: 10%;
+
 		span {
 			padding: 0 20px 3px 20px;
 			text-transform: uppercase;
@@ -34,9 +32,8 @@ body {
 	}
 
 	.input-group {
-		input, .input-group-addon {
-			border-radius: 0;
-		}
+		input, .input-group-addon { border-radius: 0; }
+
 		.input-group-addon {
 			border: 0;
 			text-transform: uppercase;
@@ -51,6 +48,7 @@ body {
 		border-radius: 0;
 		padding: 0;
 		margin-bottom: 30px;
+
 		.breadcrumb {
 			margin: 0;
 			font-family: Lato;
@@ -65,28 +63,24 @@ body {
 		.content-title {
 			text-align: center;
 			padding: 0;
+
 			span {
 				padding: 0 13px 3px 13px;
 				font-size: 15px;
 			}
 		}
 
-		.body-content {
-			margin-top: 0;
-		}
+		.body-content { margin-top: 0; }
 
 		.breadcrumb-template {
 			padding: 0;
-			.breadcrumb {
-				padding: 0;
-			}
+
+			.breadcrumb { padding: 0; }
 		}
 	}
 }
 
-.sweet-alert {
-	font-family: $fontOne;
-}
+.sweet-alert { font-family: $theme-font; }
 
 // Hover effect from the Hover.css lib
 // See https://github.com/IanLunn/Hover
