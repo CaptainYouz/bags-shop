@@ -1,6 +1,7 @@
 $lightDark: #3f3f3f;
 $font-color: $lightDark;
 $fontOne: 'Lato';
+$xs-screen: 768px;
 
 body {
 	font-family: 'Lato';
@@ -53,6 +54,19 @@ body {
 			font-family: Lato;
 			background-color: white;
 			text-transform: capitalize;
+		}
+	}
+}
+
+@media screen and (max-width: $xs-screen) {
+	body {
+		.content-title {
+			text-align: center;
+			padding: 0;
+			span {
+				padding: 0 13px 3px 13px;
+				font-size: 15px;
+			}
 		}
 	}
 }

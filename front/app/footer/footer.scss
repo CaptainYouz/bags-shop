@@ -9,10 +9,6 @@ footer {
 		padding: 0;
 	}
 
-	.newsletter {
-		.input-group-addon {
-		}
-	}
 	.terms {
 		ul {
 			list-style: none;
@@ -39,5 +35,13 @@ footer {
 		font-size: 10px;
 		text-transform: uppercase;
 		font-weight: bold;
+	}
+}
+
+@media screen and (max-width: $xs-screen) {
+	footer {
+		.newsletter, .terms, .social {
+			margin-bottom: 40px;
+		}
 	}
 }

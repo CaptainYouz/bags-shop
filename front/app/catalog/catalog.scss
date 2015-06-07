@@ -33,3 +33,20 @@
 		}
 	}
 }
+
+@media screen and (max-width: $xs-screen) {
+	.catalog {
+		.welcome {
+			margin: 0 0 50px 0;
+			font-size: 13px;
+			.conclusion {
+				b {
+					font-size: 18px;
+				}
+			}
+		}
+		.categories {
+			padding-bottom: 0;
+		}
+	}
+}
