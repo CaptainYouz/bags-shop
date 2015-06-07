@@ -164,3 +164,42 @@
 		}
 	}
 }
+
+@media screen and (max-width: $xs-screen) {
+	.cart {
+		.content {
+			.items {
+				.item {
+					margin-bottom: 30px;
+					padding-right: 15px;
+					border: 0;
+					.delete {
+						text-align: left;
+						padding: 0;
+						button { font-size: 14px; }
+					}
+					.info {
+						padding: 0;
+						.name {
+							font-size: 14px;
+						}
+					}
+					.quantity { padding: 0; }
+					.price { font-size: 20px; }
+				}
+			}
+			.cart-info {
+				padding: 45px;
+				.block-title {
+					text-align: center;
+					margin-bottom: 10px;
+				}
+				.total {
+					.row { margin-bottom: 20px; }
+					.right { padding-top: 0; }
+				}
+				.checkout { margin-bottom: 0; }
+			}
+		}
+	}
+}

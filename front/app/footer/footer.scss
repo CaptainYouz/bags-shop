@@ -40,6 +40,7 @@ footer {
 
 @media screen and (max-width: $xs-screen) {
 	footer {
+		margin-top: 0;
 		.newsletter, .terms, .social {
 			margin-bottom: 40px;
 		}
