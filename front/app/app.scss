@@ -1,7 +1,9 @@
 $lightDark: #3f3f3f;
 $font-color: $lightDark;
 $fontOne: 'Lato';
+
 $xs-screen: 768px;
+$md-screen: 1200px;
 
 body {
 	font-family: 'Lato';
@@ -74,7 +76,6 @@ body {
 		}
 
 		.breadcrumb-template {
-			margin-bottom: 15px;
 			padding: 0;
 			.breadcrumb {
 				padding: 0;

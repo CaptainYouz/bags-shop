@@ -1,6 +1,8 @@
 # Aswat Project | Bags shop
 This is the repository of my Aswat test project.<br/>
 You can see a demo online, on : http://www.thelink.com
+The website is reponsive, so you also can test it on your phone.
+If you are located in Dubaï, try your city name to have a reduction ;)
 
 ## How to run it locally
 #### Install dependencies

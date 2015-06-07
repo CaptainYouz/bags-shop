@@ -13,10 +13,12 @@ Each module contains files related to it (<i>for example: cart-controller.js, ca
 ### Librairies used for the front app
 
 * [Angular](https://angularjs.org/)
+* [Angular-loading-bar](http://chieffancypants.github.io/angular-loading-bar/)
+* [Angular-ui-bootstrap](https://angular-ui.github.io/bootstrap/)
 * [Angular-ui-router](https://github.com/angular-ui/ui-router)
 * [Angular-utils-ui-breadcrumbs](https://github.com/michaelbromley/angularUtils/tree/master/src/directives/uiBreadcrumbs)
-* [Angular-loading-bar](http://chieffancypants.github.io/angular-loading-bar/)
 * [Bootstrap](http://getbootstrap.com/)
+* [Fontawesome](http://fortawesome.github.io/Font-Awesome/)
 * [Lodash](https://lodash.com/)
 * [Sass](http://sass-lang.com/)
 * [Sweetalert](http://t4t5.github.io/sweetalert/)
