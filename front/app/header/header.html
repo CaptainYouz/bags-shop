@@ -1,9 +1,17 @@
-<div class="container header">
-	<div class="row logo">
-		<div ui-sref="catalog">
-			<img src="http://images.clipartpanda.com/backpack-clipart-black-and-white-plain-white-backpack-hi.png">
-			<span>The bags shop</span>
+<nav role="navigation" class="navbar navbar-default header">
+	<div class="container">
+		<div class="navbar-header brand">
+			<button ng-click="isCollapsed = !isCollapsed" data-toggle="collapse" class="navbar-toggle">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<div class="logo" ui-sref="catalog">
+				<img src="http://images.clipartpanda.com/backpack-clipart-black-and-white-plain-white-backpack-hi.png">
+				<span>The bags shop</span>
+			</div>
 		</div>
+		<div class="row menu" ui-view="menu"></div>
 	</div>
-	<div class="row menu" ui-view="menu"></div>
-</div>
+</nav>

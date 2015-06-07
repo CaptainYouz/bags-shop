@@ -17,6 +17,7 @@ var paths = {
 			'bower_components/lodash/lodash.js',
 			'bower_components/sweetalert/dist/sweetalert.min.js',
 			'bower_components/angular/angular.js',
+			'bower_components/angular-bootstrap/ui-bootstrap.js',
 			'bower_components/angular-ui-router/release/angular-ui-router.js',
 			'bower_components/angular-loading-bar/build/loading-bar.min.js',
 			'bower_components/angular-utils-ui-breadcrumbs/uiBreadcrumbs.js'
@@ -35,6 +36,7 @@ var paths = {
 	],
 	css: [
 		'bower_components/bootstrap/dist/css/bootstrap.css',
+		'bower_components/angular-bootstrap/ui-bootstrap-csp.css',
 		'bower_components/angular-loading-bar/build/loading-bar.min.css',
 		'bower_components/sweetalert/dist/sweetalert.css'
 	],

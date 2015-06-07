@@ -1,5 +1,6 @@
 var app = angular.module('awsatApp', [
 	'ui.router',
+	'ui.bootstrap',
 	'angular-loading-bar',
 	'angularUtils.directives.uiBreadcrumbs',
 	'awsatApp.catalog',
