@@ -15,7 +15,7 @@ To run this project, you first need to install node.js, npm and bower
 #### Build
 #####- On Linux & MacOs
 
-Once you have node and npm install, you can eather run the buildAswatApp script :
+Once you have node, npm and bower installed, you can eather run the buildAswatApp script :
 ```sh
 $ ./buildAswatApp
 ```
