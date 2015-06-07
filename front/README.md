@@ -2,7 +2,7 @@
 
 ### How to build and run the app
 
-Take a look at [this](../README.md)
+Take a look at [this](https://github.com/CaptainYouz/bags-shop#how-to-run-it-locally)
 
 ### Architectural design
 
