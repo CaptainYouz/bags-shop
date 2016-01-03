@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "Anas Mammeri <anas.mammeri@gmail.com>",
+  "author": "Anas M <captainyouz@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "lodash": "^3.9.3",
