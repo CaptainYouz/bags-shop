@@ -2,7 +2,7 @@
   "name": "Aswat-Test",
   "version": "1.0.0",
   "description": "The Aswat Job Test, a simple single app page relating to a shopping card",
-  "author": "Anas Mammeri <anas.mammeri@gmail.com>",
+  "author": "Anas M <captainyouz@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "gulp": "^3.8.11",
